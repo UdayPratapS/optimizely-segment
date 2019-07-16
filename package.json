@@ -1,0 +1,23 @@
+{
+  "name": "optimizely",
+  "version": "1.0.0",
+  "description": "segment to optimely data transfering",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "optimizely",
+    "segment",
+    "heroku"
+  ],
+  "author": "Uday",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}
