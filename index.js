@@ -1,15 +1,22 @@
 var express = require('express');  
 var app = express();
-var port = 8000;
+
+
 var request = require('request');
 
-var username = "DiZcjKwEqXRF-DB6p77EQufVdzNLi78VnrEQKNdxKC9wBQTpaLiRQyvNKd-jZR_jHeNF291eneAiIm2S2jUPe2WLRULN69Kfv3bnShHEhOfk3nvMIIktEGgOBik8K_KjyzHSoim0Ph2WE33OWj-Ea__jQVuSQRtChrBn8rXmnXcqXZh9SiSaO7J1VY2EHa7puny5njhKAWep"
+//var port = 8000;
+var port = process.env.PORT || 8081;
+
+//var username = "DiZcjKwEqXRF-DB6p77EQufVdzNLi78VnrEQKNdxKC9wBQTpaLiRQyvNKd-jZR_jHeNF291eneAiIm2S2jUPe2WLRULN69Kfv3bnShHEhOfk3nvMIIktEGgOBik8K_KjyzHSoim0Ph2WE33OWj-Ea__jQVuSQRtChrBn8rXmnXcqXZh9SiSaO7J1VY2EHa7puny5njhKAWep"
+var  username = process.env.TOKEN;
+
 var password = ''
 var url = 'https://profiles.segment.com/v1/spaces/6lFVaWJT9K/collections/users/profiles/user_id:'
 var traits = '/traits'
 
 function callPersonas(completeURL) {
     return new Promise(function(resolve, reject) {
+        
         var options = {url: completeURL,  auth: {user: username, password: password }}
         request.get(options, function(err, resp, body) {
             if (err) {
@@ -26,7 +33,7 @@ function main() {
         var personaId = req.query['personaId'];
         var verbose = req.query['verbose'];
 
-        if(!personaId) personaId = "cDKAFE9zhjd2FyYn";
+        //if(!personaId) personaId = "cDKAFE9zhjd2FyYn";
 
         if(personaId != null) {
             var completeURL = url + personaId + traits+"?limit=100";
