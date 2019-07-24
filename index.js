@@ -4,7 +4,6 @@ var app = express();
 var request = require('request');
 
 var port = process.env.PORT;
-var port2 = process.env.TEST_PORT;
 var username = process.env.TOKEN;
 //var username = "DiZcjKwEqXRF-DB6p77EQufVdzNLi78VnrEQKNdxKC9wBQTpaLiRQyvNKd-jZR_jHeNF291eneAiIm2S2jUPe2WLRULN69Kfv3bnShHEhOfk3nvMIIktEGgOBik8K_KjyzHSoim0Ph2WE33OWj-Ea__jQVuSQRtChrBn8rXmnXcqXZh9SiSaO7J1VY2EHa7puny5njhKAWep"
 
@@ -64,6 +63,6 @@ function main() {
     })
 }
 
-app.listen(port2, () => console.log(`Personas Personalized Segment app listening on port ${port} and ${port2}`));
+app.listen(port, () => console.log(`Personas Personalized Segment app listening on port ${port}));
 app.use(express.static('public'));
 main();
