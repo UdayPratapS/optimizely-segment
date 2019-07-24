@@ -63,6 +63,6 @@ function main() {
     })
 }
 
-app.listen(port, () => console.log(`Personas Personalized Segment app listening on port ${port}));
+app.listen(port, () => console.log(`Personas Personalized Segment app listening on port ${port}!`));
 app.use(express.static('public'));
 main();
