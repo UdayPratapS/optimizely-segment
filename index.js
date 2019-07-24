@@ -1,18 +1,15 @@
 var express = require('express');  
 var app = express();
 
-
 var request = require('request');
 
-//var port = 8000;
-var port = process.env.PORT || 8081;
-
+var port = process.env.PORT;
+var username = process.env.TOKEN;
 //var username = "DiZcjKwEqXRF-DB6p77EQufVdzNLi78VnrEQKNdxKC9wBQTpaLiRQyvNKd-jZR_jHeNF291eneAiIm2S2jUPe2WLRULN69Kfv3bnShHEhOfk3nvMIIktEGgOBik8K_KjyzHSoim0Ph2WE33OWj-Ea__jQVuSQRtChrBn8rXmnXcqXZh9SiSaO7J1VY2EHa7puny5njhKAWep"
-var  username = process.env.TOKEN;
 
-var password = ''
-var url = 'https://profiles.segment.com/v1/spaces/6lFVaWJT9K/collections/users/profiles/user_id:'
-var traits = '/traits'
+var password = '';
+var url = 'https://profiles.segment.com/v1/spaces/6lFVaWJT9K/collections/users/profiles/user_id:';
+var traits = '/traits';
 
 function callPersonas(completeURL) {
     return new Promise(function(resolve, reject) {
@@ -66,6 +63,6 @@ function main() {
     })
 }
 
-app.listen(port, () => console.log(`Personas Personalized Segment app listening on port ${port}!`))
-app.use(express.static('public'))
-main()
+app.listen(port, () => console.log(`Personas Personalized Segment app listening on port ${port} and Token ${username}`));
+app.use(express.static('public'));
+main();
