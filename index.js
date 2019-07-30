@@ -60,7 +60,7 @@ function main() {
                 }catch(e){
                     console.log("Purchasers Cookies not sending", e);
                 }
-                res.sendfile('index.html');
+                //res.sendfile('index.html');
             })
         } else{
             //For demo purposes we're just using a screen scraped copy of the Segment home page
