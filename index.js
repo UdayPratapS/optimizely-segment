@@ -58,7 +58,7 @@ function main() {
                 try{
                     res.cookie('purchasers', cookieString);
                 }catch(e){
-                    console.log("Purchasers Cookies not sending", e);
+                    //console.log("Purchasers Cookies not sending", e);
                 }
                 //res.sendfile('index.html');
             })
