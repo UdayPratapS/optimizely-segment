@@ -42,15 +42,15 @@ function main() {
 
             //extract industry trait from the completed rest api call.
             personasPromise.then(function (result) {
-                console.log("resule", result);
+                //console.log("resule", result);
                 if(result['traits'])
                 cookieString = result['traits']['purchasers'];
-                //console.log("UserDetails", userDetails);
+                /*
                 try{
                     res.send(result);
                 }catch(e){
                     console.log("Cookies not sending", e);
-                }
+                }*/
             })
 
             //set the retrieved industry trait as a cookie.
