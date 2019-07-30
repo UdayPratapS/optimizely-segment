@@ -42,12 +42,12 @@ function main() {
 
             //extract industry trait from the completed rest api call.
             personasPromise.then(function (result) {
-                userDetails = result;
+                console.log("resule", result);
                 if(result['traits'])
                 cookieString = result['traits']['purchasers'];
                 //console.log("UserDetails", userDetails);
                 try{
-                    res.send(userDetails);
+                    res.send(result);
                 }catch(e){
                     console.log("Cookies not sending", e);
                 }
@@ -55,12 +55,14 @@ function main() {
 
             //set the retrieved industry trait as a cookie.
             personasPromise.then(function () {
+                console.log("cookieString", cookieString);
                 try{
                     res.cookie('purchasers', cookieString);
+                    //res.sendfile('index.html');
                 }catch(e){
-                    //console.log("Purchasers Cookies not sending", e);
+                    console.log("Purchasers Cookies not sending", e);
                 }
-                //res.sendfile('index.html');
+                
             })
         } else{
             //For demo purposes we're just using a screen scraped copy of the Segment home page
