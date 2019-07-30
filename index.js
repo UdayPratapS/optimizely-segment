@@ -59,7 +59,7 @@ function main() {
 
             //set the retrieved industry trait as a cookie.
             personasPromise.then(function () {
-                console.log("cookieString", cookieString);
+                //console.log("cookieString", cookieString);
                 try{
                     //res.cookie('purchasers', cookieString);
                     //res.sendfile('index.html');
