@@ -8,7 +8,7 @@ var port = process.env.PORT || 3000;
 var port2 = process.env.TEST_PORT || 8084;
 //var username = process.env.TOKEN;
 
-var username = "DiZcjKwEqXRF-DB6p77EQufVdzNLi78VnrEQKNdxKC9wBQTpaLiRQyvNKd-jZR_jHeNF291eneAiIm2S2jUPe2WLRULN69Kfv3bnShHEhOfk3nvMIIktEGgOBik8K_KjyzHSoim0Ph2WE33OWj-Ea__jQVuSQRtChrBn8rXmnXcqXZh9SiSaO7J1VY2EHa7puny5njhKAWep"
+var username = "DiZcjKwEqXRF-DB6p77EQufVdzNLi78VnrEQKNdxKC9wBQTpaLiRQyvNKd-jZR_jHeNF291eneAiIm2S2jUPe2WLRULN69Kfv3bnShHEhOfk3nvMIIktEGgOBik8K_KjyzHSoim0Ph2WE33OWj-Ea__jQVuSQRtChrBn8rXmnXcqXZh9SiSaO7J1VY2EHa7puny5njhKAWep";
 
 var password = '';
 var url = 'https://profiles.segment.com/v1/spaces/6lFVaWJT9K/collections/users/profiles/user_id:';
@@ -55,7 +55,11 @@ function main() {
 
             //set the retrieved industry trait as a cookie.
             personasPromise.then(function () {
-                res.cookie('purchasers', cookieString);
+                try{
+                    res.cookie('purchasers', cookieString);
+                }catch(e){
+                    console.log("Purchasers Cookies not sending", e);
+                }
                 res.sendfile('index.html');
             })
         } else{
