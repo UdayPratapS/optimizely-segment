@@ -3,7 +3,8 @@ var app = express();
 
 var request = require('request');
 
-var port = process.env.PORT;
+var host = process.env.HOST || '0.0.0.0';
+var port = process.env.PORT || 3000;
 var port2 = process.env.TEST_PORT || 8084;
 //var username = process.env.TOKEN;
 
@@ -67,6 +68,7 @@ function main() {
     })
 }
 
-app.listen(port2, () => console.log(`Personas Personalized Segment app listening on port2 ${port2}!`));
+app.listen(port, host () => console.log(`Personas Personalized Segment app listening on port ${port}! and host ${host}`));
+
 app.use(express.static('public'));
 main();
