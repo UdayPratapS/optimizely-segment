@@ -56,7 +56,6 @@ function main() {
             //set the retrieved industry trait as a cookie.
             personasPromise.then(function () {
                 try{
-                    res.setHeader("Content", "text/html");
                     res.cookie('purchasers', cookieString);
                 }catch(e){
                     console.log("Purchasers Cookies not sending", e);
